@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>English Year 4</title>
+<style>
+:root{color-scheme:light dark;--bg:#f2f2f7;--card:#fff;--ink:#000;--sec:rgba(60,60,67,.72);--sec2:#8e8e93;--sep:rgba(60,60,67,.18);--fill:rgba(120,120,128,.12);--blue:#007aff;--tint:rgba(0,122,255,.12);--green:#34c759;--greent:#248a3d;--redt:#d70015;--orange:#ff9500;--bar:rgba(249,249,249,.88);--segon:#fff;--okbg:rgba(52,199,89,.18);--badbg:rgba(255,59,48,.14)}
+@media(prefers-color-scheme:dark){:root{--bg:#000;--card:#1c1c1e;--ink:#fff;--sec:rgba(235,235,245,.62);--sec2:#8e8e93;--sep:rgba(84,84,88,.55);--fill:rgba(120,120,128,.24);--blue:#0a84ff;--tint:rgba(10,132,255,.2);--green:#30d158;--greent:#30d158;--redt:#ff453a;--orange:#ff9f0a;--bar:rgba(29,29,31,.88);--segon:#636366;--okbg:rgba(48,209,88,.2);--badbg:rgba(255,69,58,.2)}}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:17px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",system-ui,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;touch-action:manipulation}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wrap{max-width:640px;margin:0 auto;padding:max(20px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) calc(96px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+.page{display:none}.page.on{display:block}
+.title{font-size:34px;line-height:1.15;font-weight:700;letter-spacing:.3px;margin:4px 0 2px}
+.lead{color:var(--sec);margin-bottom:4px}
+.gh{font-size:13px;text-transform:uppercase;letter-spacing:.02em;color:var(--sec);margin:26px 16px 7px}
+.list{background:var(--card);border-radius:12px;overflow:hidden}
+.list>*+*{position:relative}
+.list>*+*::before{content:'';position:absolute;top:0;left:16px;right:0;height:.5px;background:var(--sep)}
+.row{display:flex;align-items:center;gap:12px;width:100%;min-height:44px;padding:11px 16px;background:transparent;border:0;text-align:left}
+button.row:active,.row.opt:active{background:var(--fill)}
+.row.nav::after{content:'';flex:none;width:8px;height:8px;border-top:2px solid var(--sec2);border-right:2px solid var(--sec2);transform:rotate(45deg);margin-left:4px;opacity:.7}
+.row.nav.prev::after{display:none}
+.row.nav.prev::before{content:'';position:static;flex:none;width:8px;height:8px;border-left:2px solid var(--sec2);border-top:2px solid var(--sec2);transform:rotate(-45deg);margin-right:4px;background:none;opacity:.7;left:auto;right:auto;top:auto;height:8px}
+.rt{flex:1;min-width:0}.rn{display:block;font-weight:600}.rs{display:block;color:var(--sec);font-size:15px}
+.back{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-left:-6px;padding:0 6px;border:0;background:none;color:var(--blue)}
+.back::before{content:'';width:10px;height:10px;border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(45deg);margin-right:2px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;padding:14px 16px}
+.pills span{background:var(--tint);color:var(--blue);border-radius:99px;padding:5px 13px;font-size:15px;font-weight:500}
+.row.form{align-items:flex-start}
+.sym{flex:none;width:28px;height:28px;border-radius:8px;background:var(--tint);color:var(--blue);display:grid;place-items:center;font-weight:700;margin-top:1px}
+.fm{font-weight:600}.fm b,.ex b,.callout b{font-weight:600;color:var(--blue)}
+.ex{color:var(--sec);font-size:15px;margin-top:2px}
+.callout{margin-top:26px;background:var(--tint);border-radius:12px;padding:14px 16px}
+.callout .cl{font-size:13px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.row.two{justify-content:space-between;align-items:flex-start}.row.two .s1{flex:1;min-width:0}.row.two .s2{font-weight:600;color:var(--blue);text-align:right;max-width:46%}
+/* buttons */
+.btn{display:block;width:100%;min-height:50px;padding:0 20px;border:0;border-radius:14px;font-weight:600;text-align:center}
+.btn:active{opacity:.7}
+.btn.primary{background:var(--blue);color:#fff}.btn.gray{background:var(--fill);color:var(--blue)}
+.btnrow{display:flex;gap:10px;margin-top:16px}.btnrow .btn{flex:1}
+/* verbs */
+.seg{display:flex;background:var(--fill);border-radius:9px;padding:2px;margin:16px 0 14px}
+.seg button{flex:1;min-height:32px;border:0;border-radius:7px;background:transparent;font-size:14px;font-weight:500}
+.seg button.on{background:var(--segon);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.14),0 0 0 .5px rgba(0,0,0,.04)}
+.prog{display:flex;justify-content:space-between;color:var(--sec);font-size:13px;margin-bottom:6px}
+.bar{height:4px;background:var(--fill);border-radius:2px;overflow:hidden;margin-bottom:16px}.bar i{display:block;height:100%;width:0;background:var(--blue);transition:width .25s}
+.card{background:var(--card);border-radius:12px;padding:26px 16px;text-align:center;margin-bottom:12px}
+.word{font-size:34px;font-weight:700;line-height:1.15;overflow-wrap:anywhere}.card .de{color:var(--sec);margin-top:4px}
+.row.kv{justify-content:space-between}.row.kv span:first-child{color:var(--sec)}.row.kv span:last-child{font-weight:600;text-align:right;overflow-wrap:anywhere}
+.row.inp span{flex:none;color:var(--sec);width:116px}
+.row.inp input{flex:1;min-width:0;border:0;background:transparent;text-align:right;outline:none;padding:0}
+.row.inp input.ok{color:var(--greent);font-weight:600}.row.inp input.bad{color:var(--redt);font-weight:600}
+.row.opt{font-weight:500}
+.row.opt:disabled{color:inherit}
+.row.opt.ok{background:var(--okbg);color:var(--greent);font-weight:600}.row.opt.bad{background:var(--badbg);color:var(--redt);font-weight:600}
+.row.opt.ok::after{content:'✓';margin-left:auto}.row.opt.bad::after{content:'✕';margin-left:auto}
+.hintt{color:var(--sec);font-size:15px;margin:0 16px 8px}
+.fb{margin:12px 16px 0;font-size:15px;color:var(--sec);min-height:22px}.fb b{font-weight:600}.fb .g{color:var(--greent)}.fb .r{color:var(--redt)}
+.big{font-size:64px;font-weight:700;line-height:1.1}
+/* timer */
+.ring{position:relative;width:min(76vw,290px);aspect-ratio:1;margin:12px auto 14px}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:8}.ring .trk{stroke:var(--fill)}.ring .prg{stroke:var(--blue);stroke-linecap:round;stroke-dasharray:628.32;stroke-dashoffset:0;transition:stroke-dashoffset .25s linear}
+.clock{position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(44px,14vw,60px);font-weight:300;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.tst{text-align:center;color:var(--sec);min-height:24px}
+.btn.go{background:rgba(52,199,89,.2);color:var(--greent)}.btn.pause{background:rgba(255,149,0,.2);color:#b25f00}
+@media(prefers-color-scheme:dark){.btn.pause{color:var(--orange)}}
+.presets{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.chip{min-height:44px;border:0;border-radius:12px;background:var(--card);font-weight:600;color:var(--blue)}
+.chip.on{background:var(--blue);color:#fff}
+.row.opts2{justify-content:space-between}.row.opts2 .rr{display:flex;align-items:center;gap:10px}
+.row.opts2 input[type=number]{width:72px;text-align:right;border:0;background:var(--fill);border-radius:8px;padding:6px 8px;outline:none}
+.link{border:0;background:none;color:var(--blue);font-weight:600;min-height:44px;padding:0 4px}
+.sw{position:relative;width:51px;height:31px;flex:none}
+.sw input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer;z-index:1}
+.sw i{position:absolute;inset:0;background:var(--fill);border-radius:16px;transition:background .2s}
+.sw i::after{content:'';position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.3);transition:transform .2s}
+.sw input:checked+i{background:var(--green)}.sw input:checked+i::after{transform:translateX(20px)}
+.sw input:focus-visible+i{outline:2px solid var(--blue);outline-offset:2px}
+/* tab bar */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:10;display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom);background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-top:.5px solid var(--sep)}
+.tabs{display:flex;width:100%;max-width:640px}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:50px;padding:5px 0 3px;border:0;background:none;color:var(--sec2);font-size:10px;font-weight:500}
+.tab svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tab.on{color:var(--blue)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+ <section class="page on" id="p-zeiten"></section>
+
+ <section class="page" id="p-verbs">
+  <h1 class="title">Irregular Verbs</h1><p class="lead">Past Simple &amp; Past Participle</p>
+  <div class="seg" id="vmodes" role="group" aria-label="Modus"></div>
+  <div class="prog"><span id="vl"></span><span id="vr"></span></div>
+  <div class="bar"><i id="vp"></i></div>
+  <div id="va"></div>
+ </section>
+
+ <section class="page" id="p-timer">
+  <h1 class="title">Timer</h1><p class="lead">Zum Lernen und Üben</p>
+  <div class="ring"><svg viewBox="0 0 220 220" aria-hidden="true"><circle class="trk" cx="110" cy="110" r="100"/><circle class="prg" id="rg" cx="110" cy="110" r="100"/></svg><div class="clock" id="clk" role="timer">25:00</div></div>
+  <div class="tst" id="tst">Bereit</div>
+  <div class="btnrow"><button class="btn gray" id="trs">Zurücksetzen</button><button class="btn go" id="tgo">Start</button></div>
+  <div class="gh">Dauer</div>
+  <div class="presets" id="tpre"></div>
+  <div class="gh">Optionen</div>
+  <div class="list">
+   <div class="row opts2"><span>Eigene Dauer</span><span class="rr"><input id="tcu" type="number" inputmode="numeric" min="1" max="180" placeholder="Min" aria-label="Minuten"><button class="link" id="tset">Setzen</button></span></div>
+   <div class="row opts2"><span class="rt"><span class="rn" style="font-weight:400">Pomodoro</span><span class="rs">25 Min lernen, 5 Min Pause</span></span><label class="sw"><input type="checkbox" id="tpo" aria-label="Pomodoro"><i></i></label></div>
+  </div>
+  <p class="hintt" id="trd" style="margin-top:12px"></p>
+ </section>
+</main>
+
+<nav class="tabbar"><div class="tabs" role="tablist">
+ <button class="tab on" data-p="zeiten" role="tab" aria-selected="true"><svg viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>Zeiten</button>
+ <button class="tab" data-p="verbs" role="tab" aria-selected="false"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="14" height="14" rx="2.5"/><path d="M7 3.5h11.5A2.5 2.5 0 0 1 21 6v11.5"/></svg>Verben</button>
+ <button class="tab" data-p="timer" role="tab" aria-selected="false"><svg viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>Timer</button>
+</div></nav>
+
+<script>
+const $=s=>document.querySelector(s);
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const nm=s=>s.trim().toLowerCase().replace(/[’‘`]/g,"'").replace(/\s+/g,' ');
+function showTab(p){document.querySelectorAll('.page').forEach(e=>e.classList.toggle('on',e.id=='p-'+p));
+document.querySelectorAll('.tab').forEach(b=>{const on=b.dataset.p==p;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});scrollTo(0,0)}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showTab(b.dataset.p));
+
+/* ===== ZEITEN ===== */
+const T=[
+{n:'Present Simple',de:'einfache Gegenwart',
+ use:['Gewohnheiten und Routinen','Dauerhafte Fakten','Fahrpläne'],
+ sig:['always','usually','often','sometimes','never','every day','on Mondays','once a week'],
+ f:[['+','I / you / we / they <b>work</b><br>he / she / it <b>works</b>','He <b>works</b> at night.'],['−','<b>don\'t / doesn\'t</b> + Grundform','She <b>doesn\'t work</b> on Sundays.'],['?','<b>Do / Does</b> + Subjekt + Grundform','<b>Does</b> he <b>work</b> today?']],
+ note:'Bei he/she/it kommt ein <b>-s</b> ans Verb (go → goes, study → studies). Nach does/doesn\'t kein -s mehr.'},
+{n:'Present Continuous',de:'Verlaufsform der Gegenwart',
+ use:['Handlung passiert gerade jetzt','Vorübergehende Situation','Fest geplante Zukunft'],
+ sig:['now','right now','at the moment','today','these days','Look!','Listen!'],
+ f:[['+','<b>am / is / are</b> + Verb-ing','The thief <b>is running</b> away.'],['−','<b>am not / isn\'t / aren\'t</b> + Verb-ing','They <b>aren\'t listening</b>.'],['?','<b>Am / Is / Are</b> + Subjekt + Verb-ing','<b>Is</b> she <b>calling</b> the police?']],
+ note:'Schreibung: make → making, run → running, lie → lying. Verben wie know, like, want, understand stehen nicht in der -ing-Form.'},
+{n:'Past Simple',de:'einfache Vergangenheit',
+ use:['Abgeschlossene Handlung in der Vergangenheit','Aufeinanderfolgende Ereignisse in einer Geschichte'],
+ sig:['yesterday','last week','two days ago','in 2020','then','when'],
+ f:[['+','regelmäßig: Verb + <b>ed</b><br>unregelmäßig: 2. Form (siehe Verben)','He <b>stole</b> a car. They <b>arrested</b> him.'],['−','<b>didn\'t</b> + Grundform','She <b>didn\'t see</b> the thief.'],['?','<b>Did</b> + Subjekt + Grundform','<b>Did</b> you <b>hear</b> the alarm?']],
+ note:'Nach did/didn\'t immer die Grundform: Did he steal? (nicht: Did he stole?). Schreibung: stop → stopped, study → studied.'},
+{n:'Past Continuous',de:'Verlaufsform der Vergangenheit',
+ use:['Handlung lief gerade zu einem bestimmten Zeitpunkt','Hintergrund einer Geschichte','Wird von einer kurzen Handlung (Past Simple) unterbrochen'],
+ sig:['while','as','at 8 o\'clock last night','all evening','when'],
+ f:[['+','<b>was / were</b> + Verb-ing','I <b>was sleeping</b> when the alarm rang.'],['−','<b>wasn\'t / weren\'t</b> + Verb-ing','He <b>wasn\'t looking</b>.'],['?','<b>Was / Were</b> + Subjekt + Verb-ing','<b>Were</b> they <b>watching</b> you?']],
+ note:'Lange Handlung → Past Continuous, kurze Handlung → Past Simple: While I <b>was walking</b> home, I <b>saw</b> a burglar.'},
+{n:'Past Perfect',de:'Vorvergangenheit',
+ use:['Handlung passierte vor einer anderen Handlung in der Vergangenheit'],
+ sig:['before','after','already','by the time','until','never … before'],
+ f:[['+','<b>had</b> + Past Participle','The thief <b>had escaped</b> before the police arrived.'],['−','<b>hadn\'t</b> + Past Participle','He <b>hadn\'t locked</b> the door.'],['?','<b>Had</b> + Subjekt + Past Participle','<b>Had</b> they <b>caught</b> him?']],
+ note:'Die frühere Handlung steht im Past Perfect, die spätere im Past Simple: After he <b>had stolen</b> the car, he <b>drove</b> away.'}
+];
+const MIX=[['always, usually, often, never, every day','Present Simple'],['now, at the moment, Look!, Listen!','Present Continuous'],['yesterday, ago, last week, in 2020','Past Simple'],['while, as, at 8 o\'clock last night','Past Continuous'],['before, after, by the time, already','Past Perfect']];
+const STORY=[['Past Continuous','Szene: Was lief gerade?','It was raining.'],['Past Simple','Handlung: Was passierte?','He heard a noise.'],['Past Perfect','Vorgeschichte: Was war davor?','Someone had broken in.']];
+const nav=(i,txt,sub,prev)=>`<button class="row nav${prev?' prev':''}" data-i="${i}"><span class="rt"><span class="rn">${txt}</span>${sub?`<span class="rs">${sub}</span>`:''}</span></button>`;
+function zList(){$('#p-zeiten').innerHTML=`<h1 class="title">Zeiten</h1><p class="lead">Test 1 · 11. November 2026</p>
+<div class="gh">Grammar</div><div class="list">${T.map((t,i)=>nav(i,t.n,t.de)).join('')}</div>
+<div class="gh">Überblick</div><div class="list">${nav(5,'Mixed Tenses','Signalwörter im Vergleich')}</div>`;bind()}
+function zDetail(i){let h='<button class="back" id="bk">Zeiten</button>';
+if(i<5){const t=T[i];
+h+=`<h1 class="title">${t.n}</h1><p class="lead">${t.de}</p>
+<div class="gh">Wann?</div><div class="list">${t.use.map(u=>`<div class="row">${u}</div>`).join('')}</div>
+<div class="gh">Signalwörter</div><div class="list"><div class="pills">${t.sig.map(s=>`<span>${s}</span>`).join('')}</div></div>
+<div class="gh">Bildung</div><div class="list">${t.f.map(r=>`<div class="row form"><span class="sym">${r[0]}</span><div><div class="fm">${r[1]}</div><div class="ex">${r[2]}</div></div></div>`).join('')}</div>
+<div class="callout"><div class="cl">Merke</div>${t.note}</div>`}
+else{h+=`<h1 class="title">Mixed Tenses</h1><p class="lead">Welche Zeit? Achte auf das Signalwort.</p>
+<div class="gh">Signalwort → Zeit</div><div class="list">${MIX.map(m=>`<div class="row two"><span class="s1">${m[0]}</span><span class="s2">${m[1]}</span></div>`).join('')}</div>
+<div class="gh">Geschichte schreiben</div><div class="list">${STORY.map(s=>`<div class="row"><div><div class="fm">${s[0]}</div><div class="ex">${s[1]} „${s[2]}“</div></div></div>`).join('')}</div>`}
+h+='<div class="gh">Weiter</div><div class="list">'+(i>0?nav(i-1,T[i-1].n,'Vorherige Zeit',1):'')+(i<4?nav(i+1,T[i+1].n,'Nächste Zeit'):i==4?nav(5,'Mixed Tenses','Nächster Abschnitt'):'')+'</div>';
+$('#p-zeiten').innerHTML=h;$('#bk').onclick=()=>{location.hash=''};bind()}
+function bind(){document.querySelectorAll('#p-zeiten .row.nav').forEach(b=>b.onclick=()=>{location.hash='t'+b.dataset.i})}
+function zRender(){const m=location.hash.match(/^#t([0-5])$/);m?zDetail(+m[1]):zList();scrollTo(0,0)}
+addEventListener('hashchange',()=>{showTab('zeiten');zRender()});
+zRender();
+
+/* ===== TIMER ===== */
+let tBase=25,tTotal=1500,tRem=1500,tEnd=0,tRun=false,tInt=null,tRounds=0,tPhase='learn',tMsg='',ctx=null;
+const fmt=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+$('#tpre').innerHTML=[5,10,15,20,25,30,45,60].map(m=>`<button class="chip" data-m="${m}">${m} Min</button>`).join('');
+function tDraw(){$('#clk').textContent=fmt(tRem);$('#rg').style.strokeDashoffset=628.32*(tTotal?1-tRem/tTotal:0);
+const g=$('#tgo');g.textContent=tRun?'Pause':(tRem<tTotal&&tRem>0?'Weiter':'Start');g.className='btn '+(tRun?'pause':'go');
+$('#tst').textContent=tMsg||(tRun?(tPhase=='break'?'Pause läuft':'Zeit läuft'):(tRem<tTotal?'Pausiert':'Bereit'));
+$('#trd').textContent=tRounds?'Abgeschlossene Runden: '+tRounds:'';
+document.title=tRun?fmt(tRem)+' · English':'English Year 4';
+document.querySelectorAll('#tpre .chip').forEach(b=>b.classList.toggle('on',+b.dataset.m==tBase&&tPhase=='learn'))}
+function tSet(m){clearInterval(tInt);tRun=false;tMsg='';tBase=m;tPhase='learn';tTotal=tRem=Math.round(m*60);tDraw()}
+function tTick(){tRem=Math.max(0,Math.ceil((tEnd-Date.now())/1000));tDraw();if(tRem<=0)tDone()}
+function tStart(){if(!ctx){try{ctx=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(ctx&&ctx.state=='suspended')ctx.resume();
+if(tRem<=0)tRem=tTotal;tMsg='';tEnd=Date.now()+tRem*1000;tRun=true;clearInterval(tInt);tInt=setInterval(tTick,250);tDraw()}
+function tPause(){clearInterval(tInt);tRun=false;tRem=Math.max(0,Math.ceil((tEnd-Date.now())/1000));tDraw()}
+function beep(){if(!ctx)return;for(let k=0;k<3;k++){const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=880;o.connect(g);g.connect(ctx.destination);const s=ctx.currentTime+k*.4;g.gain.setValueAtTime(.2,s);g.gain.exponentialRampToValueAtTime(.001,s+.3);o.start(s);o.stop(s+.3)}}
+function tDone(){clearInterval(tInt);tRun=false;beep();if(navigator.vibrate)navigator.vibrate([300,150,300]);
+if($('#tpo').checked){if(tPhase=='learn'){tRounds++;tPhase='break';tTotal=tRem=300;tStart()}else{tPhase='learn';tTotal=tRem=1500;tMsg='Pause vorbei. Bereit für die nächste Runde.';tDraw()}}
+else{tRounds++;tMsg='Zeit ist um!';tRem=0;tDraw()}}
+$('#tgo').onclick=()=>tRun?tPause():tStart();
+$('#trs').onclick=()=>tSet(tBase);
+document.querySelectorAll('#tpre .chip').forEach(b=>b.onclick=()=>tSet(+b.dataset.m));
+$('#tset').onclick=()=>{const v=Math.round(+$('#tcu').value);if(v>=1&&v<=180)tSet(v)};
+$('#tcu').onkeydown=e=>{if(e.key=='Enter')$('#tset').click()};
+$('#tpo').onchange=()=>tSet(25);
+document.addEventListener('visibilitychange',()=>{if(tRun)tTick()});
+tDraw();
+
+/* ===== VERBS ===== */
+const VERBS=[["be","was/were","been","sein"],["beat","beat","beaten","schlagen"],["become","became","become","werden"],["begin","began","begun","beginnen"],["blow","blew","blown","blasen"],["bend","bent","bent","beugen; biegen"],["break","broke","broken","brechen"],["bring","brought","brought","bringen"],["build","built","built","bauen"],["burn","burnt","burnt","(ver-)brennen"],["buy","bought","bought","kaufen"],["catch","caught","caught","fangen"],["choose","chose","chosen","(aus-)wählen"],["come","came","come","kommen"],["cut","cut","cut","schneiden"],["do","did","done","tun, machen"],["draw","drew","drawn","zeichnen"],["dream","dreamt","dreamt","träumen"],["drink","drank","drunk","trinken"],["drive","drove","driven","fahren; treiben"],["eat","ate","eaten","essen"],["fall","fell","fallen","fallen"],["feel","felt","felt","fühlen"],["fight","fought","fought","kämpfen"],["find","found","found","finden"],["fly","flew","flown","fliegen"],["forget","forgot","forgotten","vergessen"],["freeze","froze","frozen","einfrieren"],["get","got","got","bekommen; werden"],["get up","got up","got up","aufstehen"],["give","gave","given","geben"],["go","went","gone","gehen; fahren"],["hang","hung","hung","hängen"],["have","had","had","haben"],["hear","heard","heard","hören"],["hide","hid","hidden","(sich) verstecken"],["hit","hit","hit","schlagen"],["hold","held","held","(fest-)halten"],["hurt","hurt","hurt","(sich) verletzen"],["keep","kept","kept","(be-)halten"],["know","knew","known","wissen; kennen"],["learn","learnt","learnt","lernen"],["leave","left","left","verlassen"],["let","let","let","lassen"],["lose","lost","lost","verlieren"],["make","made","made","machen"],["meet","met","met","treffen"],["pay","paid","paid","(be-)zahlen"],["put","put","put","legen; setzen; stellen"],["read","read","read","lesen"],["ride","rode","ridden","reiten; fahren"],["ring","rang","rung","läuten"],["run","ran","run","laufen"],["say","said","said","sagen"],["see","saw","seen","sehen"],["sell","sold","sold","verkaufen"],["send","sent","sent","senden, schicken"],["set off","set off","set off","abfahren"],["shine","shone","shone","scheinen"],["shoot","shot","shot","schießen"],["show","showed","shown","zeigen"],["sing","sang","sung","singen"],["sit","sat","sat","sitzen, sich setzen"],["sleep","slept","slept","schlafen"],["smell","smelt","smelt","riechen"],["speak","spoke","spoken","sprechen, sagen"],["spend","spent","spent","verbringen; ausgeben"],["stand","stood","stood","stehen"],["steal","stole","stolen","stehlen"],["swim","swam","swum","schwimmen"],["take","took","taken","nehmen"],["teach","taught","taught","lehren, unterrichten"],["tell","told","told","sagen, erzählen"],["think","thought","thought","denken"],["throw","threw","thrown","werfen"],["understand","understood","understood","verstehen"],["wake up","woke up","woken up","(auf-)wachen"],["win","won","won","gewinnen"],["write","wrote","written","schreiben"]];
+let vm='flash',vd=[],vx=0,vC=0,vW=0;
+$('#vmodes').innerHTML=[['flash','Karten'],['input','Eingabe'],['multi','Auswahl']].map(m=>`<button data-m="${m[0]}">${m[1]}</button>`).join('');
+document.querySelectorAll('#vmodes button').forEach(b=>b.onclick=()=>{vm=b.dataset.m;vr()});
+function vr(){vd=sh(VERBS);vx=0;vC=vW=0;vn()}
+function stats(){$('#vl').textContent=`Karte ${Math.min(vx+1,vd.length)} von ${vd.length}`;$('#vr').textContent=`✓ ${vC}  ✕ ${vW}`;$('#vp').style.width=vx/vd.length*100+'%';
+document.querySelectorAll('#vmodes button').forEach(b=>b.classList.toggle('on',b.dataset.m==vm))}
+function next(){vx++;vn()}
+function head(v){return `<div class="card"><div class="word">${v[0]}</div><div class="de">${v[3]}</div></div>`}
+function vn(){stats();const a=$('#va');
+if(vx>=vd.length){a.innerHTML=`<div class="card"><div class="big">${Math.round(vC/(vC+vW||1)*100)}%</div><div class="de">${vC} richtig · ${vW} falsch</div></div><button class="btn primary" id="again">Nochmal</button>`;$('#again').onclick=vr;return}
+const v=vd[vx];
+if(vm=='flash'){a.innerHTML=head(v)+'<div id="ans"></div><div id="ac"><button class="btn primary" id="rv">Lösung zeigen</button></div>';
+$('#rv').onclick=()=>{$('#ans').innerHTML=`<div class="list"><div class="row kv"><span>Present</span><span>${v[0]}</span></div><div class="row kv"><span>Past Simple</span><span>${v[1]}</span></div><div class="row kv"><span>Past Participle</span><span>${v[2]}</span></div></div>`;
+$('#ac').innerHTML='<div class="btnrow"><button class="btn gray" id="n0">Nochmal</button><button class="btn primary" id="n1">Gewusst</button></div>';
+$('#n0').onclick=()=>{vW++;next()};$('#n1').onclick=()=>{vC++;next()}}}
+else if(vm=='input'){a.innerHTML=head(v)+`<div class="list"><label class="row inp"><span>Past Simple</span><input id="i1" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"></label><label class="row inp"><span>Past Participle</span><input id="i2" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done"></label></div><div class="fb" id="fb"></div><button class="btn primary" id="ck" style="margin-top:12px">Prüfen</button>`;
+$('#i1').focus();let done=false;
+const go=()=>{if(done){next();return}done=true;
+const ck=(id,e)=>{const el=$(id),r=e.toLowerCase().replace(/\(.*?\)/g,'').split(/[;\/]/).map(nm),ok=r.includes(nm(el.value))||nm(el.value)==nm(e);el.className=ok?'ok':'bad';el.readOnly=true;return ok};
+const p=ck('#i1',v[1]),q=ck('#i2',v[2]);p&&q?vC++:vW++;
+$('#fb').innerHTML=p&&q?'<b class="g">Richtig.</b>':`<b class="r">Falsch.</b> Richtig wäre: <b>${v[1]} · ${v[2]}</b>`;$('#ck').textContent='Weiter';stats()};
+$('#ck').onclick=go;a.querySelectorAll('input').forEach(i=>i.onkeydown=e=>{if(e.key=='Enter'){e.preventDefault();go()}})}
+else{const k=vx%2,ca=v[1+k],opts=sh([ca,...sh([...new Set(VERBS.filter(x=>x[0]!=v[0]&&x[1+k]!=ca).map(x=>x[1+k]))]).slice(0,3)]);
+a.innerHTML=head(v)+`<p class="hintt">Wähle: <b>${k?'Past Participle':'Past Simple'}</b></p><div class="list">${opts.map((o,i)=>`<button class="row opt" data-k="${i}">${o}</button>`).join('')}</div><div id="ac"></div>`;
+const bs=a.querySelectorAll('.opt');
+bs.forEach(b=>b.onclick=()=>{bs.forEach((x,i)=>{x.disabled=true;if(opts[i]==ca)x.classList.add('ok')});const ok=opts[+b.dataset.k]==ca;if(!ok)b.classList.add('bad');ok?vC++:vW++;stats();
+$('#ac').innerHTML='<button class="btn primary" id="nx" style="margin-top:16px">Weiter</button>';$('#nx').onclick=next})}}
+vr();
+</script>
+</body>
+</html>
